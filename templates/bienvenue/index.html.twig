@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Bienvenue{% endblock %}
+
+{% block body %}
+    <h1>Bienvenue</h1>
+    {# Test si le prenom existe  #}
+    {% if prenom is defined %}
+        <p>Bienvenue à {{ prenom | capitalize }} dans Symfony !</p>
+    {% else %}
+        <p>Bienvenue dans Symfony !</p>
+    {% endif %}
+
+{% endblock %}

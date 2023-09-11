@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+{% block title %}Bienvenue{% endblock %}
+
+{% block body %}
+<h1>Bienvenues</h1>
+    {# Affiche le nom de toutes les personnes #}
+    <p>Voici la liste des personnes : </p>
+    <ul>
+        {% for personne in personnes %}
+            {#  <li>{{ personne }}</li> #}
+            {# Test si la personne commence par la ltrre P#}
+            {% if personne starts with 'P' %}
+                {# <li>{{ personne }}</li> #}
+{#                <li><a href="{{ path('app_bienvenue_prenom', {'prenom': personne | lower}) }}">{{ personne }}</a></li>#}
+                <li><a href="/bienvenue/{{ personne }}">{{ personne }}</a></li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+
+
+{% endblock %}
+
