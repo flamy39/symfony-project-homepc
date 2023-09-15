@@ -21,6 +21,19 @@ class EtudiantRepository extends ServiceEntityRepository
         parent::__construct($registry, Etudiant::class);
     }
 
+    // Méthode permettant de rechercher tous les étudiants mineurs
+    public function findMineurs(): array
+    {
+        $dateMajorite = new \DateTime('-18 years');
+        return $this->createQueryBuilder('e')
+            ->andWhere('e.dateNaissance > :dateMajorite')
+            ->setParameter('dateMajorite', $dateMajorite)
+            ->orderBy('e.id', 'ASC')
+            ->getQuery()
+            ->getResult()
+        ;
+    }
+
 //    /**
 //     * @return EtudiantFixtures[] Returns an array of EtudiantFixtures objects
 //     */

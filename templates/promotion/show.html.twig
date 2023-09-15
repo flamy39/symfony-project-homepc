@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Promotions{% endblock %}
+
+{% block body %}
+
+    <h1>Promotion</h1>
+    <p>{{ promotion.nom }}</p>
+    <h2>Etudiants</h2>
+    <ul>
+        {% for etudiant in promotion.etudiants %}
+            <li>{{ etudiant.nom }} {{ etudiant.prenom }}</li>
+        {% endfor %}
+{% endblock %}

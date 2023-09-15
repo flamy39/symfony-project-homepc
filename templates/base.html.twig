@@ -7,15 +7,12 @@
         {% block stylesheets %}
             <link href="{{ asset('css/style.css') }}" rel="stylesheet" />
         {% endblock %}
-
-        {% block javascripts %}
-        {% endblock %}
     </head>
     <body>
-        {# Créer un header avec un menu simple #}
         {% include 'partials/_header.html.twig' %}
         {% block body %}
-
+        {% endblock %}
+        {% block javascripts %}
         {% endblock %}
     </body>
 </html>

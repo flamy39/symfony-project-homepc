@@ -11,4 +11,5 @@
     {# afficher la date de naissance au format jj/mm/aaaa #}
     <p>Date de naissance : {{ etudiant.dateNaissance | date('d/m/Y') }}</p>
     <p>Age : {{ etudiant.age }} ans</p>
+    <p>Promotion : {{ etudiant.promotion.nom }}</p>
 {% endblock %}
