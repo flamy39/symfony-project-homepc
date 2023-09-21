@@ -4,6 +4,7 @@ namespace App\Repository;
 
 use App\Entity\Etudiant;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\ORM\Query;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
@@ -58,4 +59,15 @@ class EtudiantRepository extends ServiceEntityRepository
 //            ->getOneOrNullResult()
 //        ;
 //    }
+    // findAllQuery retourne une requête permettant de rechercher tous les etudiants
+    // Cette méthode est utilisée dans le contrôleur EtudiantController
+    // pour la pagination
+    public function findAllQuery(): Query
+    {
+        return $this->createQueryBuilder('e')
+            ->orderBy('e.id', 'ASC')
+            ->getQuery()
+        ;
+    }
+
 }

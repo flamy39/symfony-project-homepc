@@ -9,4 +9,8 @@
         {% for etudiant in etudiants %}
             <li><a href="{{ path('app_etudiant_show',{'id': etudiant.id}) }}">{{ etudiant.prenom }} {{ etudiant.nom }}</a></li>
         {% endfor %}
+    </ul>
+    <div class="navigation">
+        {{ knp_pagination_render(etudiants) }}
+    </div>
 {% endblock %}
